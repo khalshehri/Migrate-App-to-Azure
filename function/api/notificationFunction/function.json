@@ -1,0 +1,17 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "queueName",
+      "connection": "connection",
+      "dbUrl": "DB_URL",
+      "dbUsername": "DB_USERNAME",
+      "dbPassword": "DB_PASSWORD",
+      "dbName": "DB_NAME"
+      
+    }
+  ]
+}
