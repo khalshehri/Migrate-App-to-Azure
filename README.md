@@ -59,13 +59,18 @@ You will need to install the following locally:
 2. Re-deploy the web app to publish changes
 
 ## Monthly Cost Analysis
+
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
 | Azure Resource | Service Tier | Monthly Cost |
 | ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
+| *Azure Postgres Database* | Single Server - Basic - 1 vCore - 5 GB | $25.32 |
+| *Azure Service Bus*   | Basic - 1 Million | $0.5 |
+| *Azure Function App* | 1 Million call - 5000 ms time | $3.60 |
+| *Azure Web App* | Free | Free |
+| *Total* | | $29.42 |
 
 ## Architecture Explanation
-This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+I deployed in app service free tair is enough because there no hight trafic.
+for send email to attendencees it better to use function to doing background process , so the portal well send to queue when any notification added to web app and the function will listing to yhe queue and processing to send email to attendencees, the function it better becouse is quite cheap and we not suffer the web app to have more high resource
+
