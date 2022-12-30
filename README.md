@@ -72,5 +72,8 @@ Complete a month cost analysis of each Azure resource to give an estimate total 
 
 ## Architecture Explanation
 I deployed in app service free tair is enough because there no hight trafic.
-for send email to attendencees it better to use function to doing background process , so the portal well send to queue when any notification added to web app and the function will listing to yhe queue and processing to send email to attendencees, the function it better becouse is quite cheap and we not suffer the web app to have more high resource
+for send email to attendencees it better to use function to doing background process , so i used function to handle and proccess send email notification.
+I used queue to let portal push any new notification and the function have trigger to handle it and send the email to attendencees. The function it better becouse is quite cheap (pay as you go) and we not suffer the web app to have more high resource. 
+
+We used relation database ( postgrel ) single server to save and persist portal data and connected to it from ( portal + function )
 
